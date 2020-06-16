@@ -3,7 +3,8 @@ import { inject as service } from '@ember/service';
 
 
 export default class ApplicationRoute extends Route {
-    model() {
-        return this.store.query('cpt-code', { 'filter[clinicianId]': 2 });
+    async model() {
+        let cptCodes = await this.store.query('cpt-code', { 'filter[clinicianId]': 2 });
+        return cptCodes;
     }
 }

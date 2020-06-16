@@ -6,13 +6,13 @@
 	</div>
 	<hr>
 	<div class="row flex-xl-nowrap">
-		<div class="col-2 pr-1 mr-2">
+		<div class="col-2 pr-1 mr-2 bd-sidebar">
 			<nav class="navbar" role="navigation">
 				<ul class="nav navbar-nav side-nav" style="list-style-type: none;">
                     {{#each steppers as |item index|}}
                     <li>
 						<h6>
-							<span class="rounded-circle">{{index}}</span>
+							<span class="rounded-circle">{{sum index 1}}</span>
 							{{if item.active 'SELECT A'}} {{item.label}}
 						</h6>
                         {{#each item.infos as |info|}}
@@ -23,7 +23,7 @@
 				</ul>
 			</nav>
 		</div>
-		<main class="col-6 py-md-3 pl-md-5 bd-content bg-gray-lighter">
+		<main class="col-8 py-md-3 pl-md-5 bd-content bg-gray-lighter">
             {{#if (eq current.label 'SERVICE')}}
 				{{#each @services as |svc|}}
 					<ServiceInfo @svc={{svc}} @setActive={{action 'setActiveService'}} />

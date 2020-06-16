@@ -39,18 +39,18 @@ export default class SchedulingWidget extends Component {
             `${newSvc.duration} minutes`
         ];
 
-        const steppers = this.steppers;
+        let selection = this.steppers;
 
-        steppers[1] = { // changing service stepper to inactive
-            ...steppers[1],
+        selection[1] = { // changing service stepper to inactive
+            ...selection[1],
             infos,
             active: false
         };
 
-        const locStepper = steppers[2];
+        const locStepper = selection[2];
         set(locStepper, 'active', true);
 
-        set(this, 'steppers', steppers);
+        set(this, 'steppers', selection);
         set(this, 'activeSvc', newSvc);
     }
 

@@ -1,9 +1,11 @@
-Hello I am office component
-
-<ul>
-	{{#each officeDetails as |office|}}
-	<li>{{office.name}}</li>
-	{{/each}}
-</ul>
+{{#each officeDetails as |office|}}
+	<div class="list-group p-3 m-2" style="height:12em;">
+		<h4>{{office.name}}</h4>
+		<h6>{{office.street}}</h6>
+		<h6>{{office.city}}, {{office.state}} {{office.zip}}</h6>
+		<h6>{{office.phone}}</h6>
+		<button class="btn btn-primary mt-2">Select</button>
+	</div>
+{{/each}}
 
 {{yield}}
