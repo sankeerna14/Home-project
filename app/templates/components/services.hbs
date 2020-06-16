@@ -1,2 +1,6 @@
-Hello World!!
+<ul>
+	{{#each serviceCodes as |svc|}}
+		<li>{{svc.description}}</li>
+	{{/each}}
+</ul>
 {{yield}}

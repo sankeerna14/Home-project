@@ -2,19 +2,17 @@ import Component from '@ember/component';
 import { inject as service } from '@ember/service';
 import { set } from '@ember/object';
 
-
-
 export default class Services extends Component {
 
 	@service store;
 
 	init() {
 		super.init(...arguments);
-		this.loadServices();
+		this.loadOffices();
 	}
 
-	async loadServices() {
-		const codes = await this.store.query('cpt-code', { 'filter[clinicianId]': 2 });
-		set(this, 'serviceCodes', codes);
+	async loadOffices() {
+		const offices = await this.store.query('office', { 'filter[clinicianId]': 2, 'filter[cptCodeId]': 3866 });
+		set(this, 'officeDetails', offices);
 	}
 };
