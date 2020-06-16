@@ -20,6 +20,8 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+      CLINIC_ID: 2,
+      CLINIC_HOST: 'https://johnny-appleseed.clientsecure.me'
     }
   };
 
