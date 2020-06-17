@@ -1,33 +1,33 @@
 .bd-sidebar {
-    position: sticky;
-    top: 4rem;
-    z-index: 1000;
-    height: calc(100vh - 4rem);
-    border-right: 1px solid rgba(0, 0, 0, 0.1);
-    padding-left: 1px;
+	position: sticky;
+	top: 4rem;
+	z-index: 1000;
+	height: calc(100vh - 4rem);
+	border-right: 1px solid rgba(0, 0, 0, 0.1);
+	padding-left: 1px;
 }
 
 .bg-gray-lighter {
 	background-color: #eceeef ;
 }
 .rounded-circle {
-    border: 1px solid;
-    border-radius: 50% !important;
-    padding: 2px 7px;
+	border: 1px solid;
+	border-radius: 50% !important;
+	padding: 2px 7px;
 }
 
-.text-gray{
-    color: #ced4da;
+.text-gray {
+	color: #ced4da;
 }
 
 .list-group {
-    box-shadow: 0 1px 3px rgba(0,0,0,.25),
-        0 1px 10px rgba(0,0,0,.1);
+	box-shadow: 0 1px 3px rgba(0,0,0,.25),
+		0 1px 10px rgba(0,0,0,.1);
 	overflow: hidden;
-    border: 1px solid rgba(black, .125);
-    background-color: #fff;
-    height: 7em;
-    margin-bottom: 1em;
+	border: 1px solid rgba(black, .125);
+	background-color: #fff;
+	height: 7em;
+	margin-bottom: 1em;
 }
 
 

@@ -9,28 +9,28 @@
 		<div class="col-2 pr-1 mr-2 bd-sidebar">
 			<nav class="navbar" role="navigation">
 				<ul class="nav navbar-nav side-nav" style="list-style-type: none;">
-                    {{#each steppers as |item index|}}
-                    <li>
-						<h6>
+					{{#each steppers as |item index|}}
+					<li>
+						<h6 class={{if (and item.textColor (not item.active)) item.textColor}}>
 							<span class="rounded-circle">{{sum index 1}}</span>
 							{{if item.active 'SELECT A'}} {{item.label}}
 						</h6>
-                        {{#each item.infos as |info|}}
-						    <p class="ml-4 text-primary">{{info}}</p>
-                        {{/each}}
+						{{#each item.infos as |info|}}
+							<p class="ml-4 text-primary">{{info}}</p>
+						{{/each}}
 					</li>
-                    {{/each}}
+					{{/each}}
 				</ul>
 			</nav>
 		</div>
 		<main class="col-8 py-md-3 pl-md-5 bd-content bg-gray-lighter">
-            {{#if (eq current.label 'SERVICE')}}
+			{{#if (eq current.label 'SERVICE')}}
 				{{#each @services as |svc|}}
 					<ServiceInfo @svc={{svc}} @setActive={{action 'setActiveService'}} />
 				{{/each}}
-            {{else if (eq current.label 'LOCATION')}}
-                <Locations @svc={{activeSvc}}/>
-            {{/if}}
+			{{else if (eq current.label 'LOCATION')}}
+				<Locations @svc={{activeSvc}}/>
+			{{/if}}
 		</main>
 	</div>
 </div>

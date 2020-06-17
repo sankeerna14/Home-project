@@ -1,9 +1,10 @@
 import JSONAPIAdapter from '@ember-data/adapter/json-api';
-// import config from './config/environment';
+import config from 'ember-get-config';
+
 
 
 export default class ApplicationAdapter extends JSONAPIAdapter {
-	host = 'https://johnny-appleseed.clientsecure.me';
+	host = config.APP.clinicialBaseURL
 	namespace = 'client-portal-api';
 
 	headers = {

@@ -1,10 +1,13 @@
 import Route from '@ember/routing/route';
-import { inject as service } from '@ember/service';
+import config from 'ember-get-config';
 
 
 export default class ApplicationRoute extends Route {
-    async model() {
-        let cptCodes = await this.store.query('cpt-code', { 'filter[clinicianId]': 2 });
-        return cptCodes;
-    }
+	model() {
+		return this.store.query('cpt-code', {
+			filter: {
+				clinicianId: config.APP.clinicianId
+			}
+		});
+	}
 }
